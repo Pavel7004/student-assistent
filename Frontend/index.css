@@ -1,0 +1,128 @@
+body{
+    /* + Затемнение */
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+                url(background.jpg) no-repeat;
+    background-size: cover;
+    margin: 0;
+}
+
+.dropdown-content {
+    display: none;
+}
+
+.title{
+    padding-top: 0.5em;
+    text-align: center;
+    font-weight: 900;
+    color : red;
+}
+
+.button-block .dropdown-content{
+    width: 50%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.button {
+    color: blue;
+}
+
+button {
+    /* Удаление обводки */
+    border: none;
+    /* Закругление кнопки */
+    border-radius: 3px;
+
+    /* .5 сокращение от 0.5; Первое значение по y, второе по x */
+    padding: .5em 1.5em;
+    margin: 0 5px;
+
+
+    /* Жирный шрифт */
+    font-weight: 600;
+    /* Плавное изменение размера кнопки*/
+    transition: .2s;
+}
+
+/* При наведении меняется цвет*/
+button:not(.delete-btn):hover {
+    background: #d3dcff;
+}
+
+/* При наведении меняется цвет
+красный у кнопки удаления
+*/
+.delete-btn:hover {
+    background: #ffd3d3;
+}
+
+/* При нажатии уменьшается размер */
+button:active {
+    transform: scale(0.92);
+}
+
+.form, .item {
+    margin: 0 auto;
+    padding: 1em;
+    width: 50%;
+    color: white;
+    font-weight: 900;
+    font-size: 20px;
+
+    box-shadow: 0px 0px 16px 1px rgba(0, 0, 0, 0.3);
+}
+
+.form {
+    background: #2e2e3a;
+}
+
+.form button {
+    margin-top: 1em;
+}
+
+.form label {
+    margin-bottom: 0.3em;
+}
+
+form {
+    padding: 10px 20px;
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+form input {
+    margin-bottom: 0.7em;
+    padding: 8px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #555;
+    outline: none;
+    transition: .2s;
+}
+
+form input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25)
+}
+
+.item {
+    background: green;
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+    
+#dataContainer p a{
+    margin: 10px;
+}
+
+#dropDown p a{
+    margin: 10px;
+}
+
+
+
+
