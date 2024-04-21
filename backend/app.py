@@ -60,6 +60,16 @@ class DBAdapter:
 db = DBAdapter()
 
 
+@app.route('/addeducation', methods=['POST'])
+def addeducation():
+    data = [
+        "Цифровая кафедра", "Курсы по программированию",
+        "Олимпиадная математика"
+    ]
+
+    return json.dumps(data, ensure_ascii=False)
+
+
 @app.route('/houses', methods=['POST'])
 def houses():
     data = [
