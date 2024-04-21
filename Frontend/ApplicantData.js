@@ -118,9 +118,9 @@ function getFormValue(event) {
     var volunteeringCheckbox = document.getElementById("volunteering");
     var isVolunteering = volunteeringCheckbox.checked;
     
-    const data = {fieldactivity: `${selectedValue}`, russian: `${russian}`, math: `${math}`, social: `${social}`, language: `${language}`, informat: `${informat}`, 
-                  biology: `${biology}`, geography: `${geography}`, chemistry: `${chemistry}`, physics: `${physics}`, history: `${history}`, 
-                  literature: `${literature}`, isMedal: `${isMedal}`, isGto: `${isGto}`, isVolunteering: `${isVolunteering}`};
+    const data = {fieldactivity: `${selectedValue}`, "Русский язык": `${russian}`, "Математика": `${math}`, "Обществознание": `${social}`, "Английский язык": `${language}`, "Информатика": `${informat}`, 
+                  "Биология": `${biology}`, "География": `${geography}`, "Химия": `${chemistry}`, "Физика": `${physics}`, "История": `${history}`, 
+                  "Литература": `${literature}`, isMedal: `${isMedal}`, isGto: `${isGto}`, isVolunteering: `${isVolunteering}`};
     putInfo(data);
 }
 
