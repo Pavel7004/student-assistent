@@ -1,0 +1,37 @@
+<html lang="ru">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Помощник студента</title>
+    
+    
+    <link rel="stylesheet" href="index.css"/>
+    <link rel="stylesheet" href="fontawesome/css/all.min.css"/>
+  </head>
+  <body>
+    <h1 class="title">План студента на день</h1>
+
+      <button id = "ReturnMenu" class="dropbtn">Вернуться на главную страницу</button><br><br>
+        <h2 class = "title">Заполните форму, указав номер группы, время начала, время окончания, место проведения мероприятия</h2>
+        <div class="form form-add-book">
+
+        <form method="POST" id="form">
+            <label for="group">Введите свой номер группы:</label>
+            <input name="group" id="group" type="text" minlength="4" maxlength="4">
+
+            <label for="timestart">Введите время начала мероприятия:</label>
+            <input name="timestart" id="timestart" type="text">
+
+            <label for="timefinish">Введите время окончания мероприятия:</label>
+            <input name="timefinish" id="timefinish" type="text">
+
+            <label for="address">Введите адрес проведения мероприятия:</label>
+            <input name="address" id="address" type="text">
+
+            <button type="submit" style="margin-right: 0; margin-left: 0"><i class="fas fa-plus"></i>Составить план дня</button>
+        </form>
+        </div>
+
+    <script src="ReturnMenu.js" defer></script>
+    <script src="planDay.js" defer></script>
+  </body>
+</html>
