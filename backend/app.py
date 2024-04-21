@@ -30,72 +30,6 @@ sphere = {
     ["38.03.02", "27.03.02", "27.03.05"]
 }
 
-plan = {
-    "42.03.01": {
-        "обществознание": 7,
-        "лингвистика": 3,
-    },
-    "45.03.02": {
-        "обществознание": 3,
-        "лингвистика": 7
-    },
-    "12.03.01": {
-        "математика": 3,
-        "физика": 3,
-        "метрология": 4
-    },
-    "12.03.04": {
-        "математика": 3,
-        "физика": 4,
-        "метрология": 3
-    },
-    "20.03.01": {
-        "математика": 4,
-        "физика": 3,
-        "метрология": 3
-    },
-    "09.03.01": {
-        "математика": 2,
-        "программирование": 2,
-        "информатика": 6
-    },
-    "01.03.02": {
-        "математика": 6,
-        "программирование": 1,
-        "информатика": 3
-    },
-    "09.03.02": {
-        "математика": 2,
-        "программирование": 4,
-        "информатика": 4
-    },
-    "27.03.03": {
-        "математика": 4,
-        "программирование": 4,
-        "информатика": 2
-    },
-    "09.03.04": {
-        "математика": 1,
-        "программирование": 7,
-        "информатика": 2
-    },
-    "27.03.04": {
-        "математика": 4,
-        "программирование": 2,
-        "информатика": 4
-    },
-    "10.05.01": {
-        "математика": 5,
-        "программирование": 1,
-        "информатика": 4
-    },
-    "11.03.01": {
-        "радиотехника": 8,
-        "физика": 1,
-        "математика": 1
-    },
-}
-
 coefs = {"gto": 4, "medal": 5, "Volunteering": 4}
 
 
@@ -126,37 +60,40 @@ class DBAdapter:
 db = DBAdapter()
 
 
+@app.route('/events', methods=['POST'])
+def events():
+    data = [{
+        "name": "Научный доклад",
+        "time": "30.04.24 13:40",
+        "position": "ул. Профессора Попова д. 5"
+    }, {
+        "name": "Зенит-Спартак",
+        "time": "17.04.24 19:30",
+        "position": "Футбольная аллея д. 1"
+    }, {
+        "name": "Вызов",
+        "time": "21.04.24 20:30",
+        "position": "ст. м. Проспект Просвещения"
+    }]
+
+    return json.dumps(data, ensure_ascii=False)
+
+
 @app.route('/jobs', methods=['GET'])
 def jobs():
-    data = [
-        "гуманитарная сфера",
-        "информационно-измерительные и биотехнические системы",
-        "компьютерный технологии и информатика",
-        "радиотехника и телекоммуникация", "электроника",
-        "электротехника и автоматика",
-        "инновационное проектирование и техническое предпринимательство"
-    ]
-    return json.dumps(data)
+    return json.dumps(list(sphere.keys()), ensure_ascii=False)
 
 
-@app.route('/all_courses', methods=['GET'])
+@app.route('/courses/all', methods=['GET'])
 def all_courses():
-    return db.query_json("SELECT name FROM courses GROUP BY name;")
+    return db.query_array("SELECT name FROM courses GROUP BY name;")
 
 
-@app.route('/changeCourse', methods=['POST'])
+@app.route('/courses/translation', methods=['POST'])
 def change():
-    data = request.get_json()
+    data = ["Электроника", "Нанотехнологии", "Электротехника"]
 
-    jobs = sphere[data['fieldactivity']]
-    data.pop('fieldactivity')
-    jobs = ", ".join(map(lambda x: "'" + x + "'", jobs))
-    total = calculate_total(data, jobs)
-
-    return db.query_json(f'''
-    SELECT name,group,total_score,price_contract FROM courses
-    WHERE {total}>= total_score AND code IN {jobs} ORDER BY code;
-    ''')
+    return json.dumps(data, ensure_ascii=False)
 
 
 @app.route('/courses', methods=['POST'])
