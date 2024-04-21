@@ -1,7 +1,3 @@
-body {
-  /* + Затемнение */
-}
-
 .dropdown-content {
   display: none;
 }
@@ -37,9 +33,7 @@ button {
 }
 
 .button {
-  position: fixed;
-  left: 48%;
-  margin: auto;
+  position: relative;
   color: blue;
 }
 
@@ -130,7 +124,6 @@ form input:focus {
 body {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   height: 100vh;
 
@@ -166,4 +159,3 @@ body {
 .container a:hover {
   background-color: #88c0d0;
 }
-
