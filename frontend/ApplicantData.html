@@ -1,71 +1,168 @@
 <html lang="ru">
   <head>
-    <meta charset="utf-8"/>
+    <meta charset="utf-8" />
     <title>Помощник студента</title>
-    
-    
-    <link rel="stylesheet" href="index.css"/>
-    <link rel="stylesheet" href="fontawesome/css/all.min.css"/>
+
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="fontawesome/css/all.min.css" />
   </head>
   <body>
     <h1 class="title">Подбор программы обучения при поступлении</h1>
 
-      <button id = "ReturnMenu" class="dropbtn">Вернуться на главную страницу</button><br><br>
-        <h2 class = "title">Заполните форму, выбрав желаемую сферу деятельность и введя свои результаты ЕГЭ</h2>
-        <div class="form form-add-book">
+    <button id="ReturnMenu" class="dropbtn">
+      Вернуться на главную страницу</button
+    ><br /><br />
+    <h2 class="title">
+      Заполните форму, выбрав желаемую сферу деятельность и введя свои
+      результаты ЕГЭ
+    </h2>
+    <div class="form form-add-book">
+      <form method="POST" id="form">
+        <label for="fieldactivity">Выберите желаемую сферу деятельности:</label>
+        <select id="fieldactivity"></select>
 
-        <form method="POST" id="form">
-            <label for="fieldactivity">Выберите желаемую сферу деятельности:</label>
-            <select  id="fieldactivity">
-            </select>
+        <label for="russian">Русский язык</label>
+        <input
+          name="russian"
+          id="russian"
+          type="number"
+          min="36"
+          max="100"
+          step="1"
+        />
 
-            <label for="russian">Русский язык</label>
-            <input name="russian" id="russian" type="number" min="36" max="100" step="1">
+        <label for="math">Математика</label>
+        <input
+          name="math"
+          id="math"
+          type="number"
+          min="27"
+          max="100"
+          step="1"
+        />
 
-            <label for="math">Математика</label>
-            <input name="math" id="math" type="number" min="27" max="100" step="1">
+        <label for="social">Обществознание</label>
+        <input
+          name="social"
+          id="social"
+          type="number"
+          min="42"
+          max="100"
+          step="1"
+        />
 
-            <label for="social">Обществознание</label>
-            <input name="social" id="social" type="number" min="42" max="100" step="1">
+        <label for="language">Иностранный язык</label>
+        <input
+          name="language"
+          id="language"
+          type="number"
+          min="22"
+          max="100"
+          step="1"
+        />
 
-            <label for="language">Иностранный язык</label>
-            <input name="language" id="language" type="number" min="22" max="100" step="1">
+        <label for="informat">Информатика</label>
+        <input
+          name="informat"
+          id="informat"
+          type="number"
+          min="40"
+          max="100"
+          step="1"
+        />
 
-            <label for="informat">Информатика</label>
-            <input name="informat" id="informat" type="number" min="40" max="100" step="1">
+        <label for="biology">Биология</label>
+        <input
+          name="biology"
+          id="biology"
+          type="number"
+          min="36"
+          max="100"
+          step="1"
+        />
 
-            <label for="biology">Биология</label>
-            <input name="biology" id="biology" type="number" min="36" max="100" step="1">
+        <label for="geography">География</label>
+        <input
+          name="geography"
+          id="geography"
+          type="number"
+          min="37"
+          max="100"
+          step="1"
+        />
 
-            <label for="geography">География</label>
-            <input name="geography" id="geography" type="number" min="37" max="100" step="1">
+        <label for="chemistry">Химия</label>
+        <input
+          name="chemistry"
+          id="chemistry"
+          type="number"
+          min="36"
+          max="100"
+          step="1"
+        />
 
-            <label for="chemistry">Химия</label>
-            <input name="chemistry" id="chemistry" type="number" min="36" max="100" step="1">
+        <label for="physics">Физика</label>
+        <input
+          name="physics"
+          id="physics"
+          type="number"
+          min="36"
+          max="100"
+          step="1"
+        />
 
-            <label for="physics">Физика</label>
-            <input name="physics" id="physics" type="number" min="36" max="100" step="1">
+        <label for="history">История</label>
+        <input
+          name="history"
+          id="history"
+          type="number"
+          min="32"
+          max="100"
+          step="1"
+        />
 
-            <label for="history">История</label>
-            <input name="history" id="history" type="number" min="32" max="100" step="1">
+        <label for="literature">Литература</label>
+        <input
+          name="literature"
+          id="literature"
+          type="number"
+          min="32"
+          max="100"
+          step="1"
+        />
 
-            <label for="literature">Литература</label>
-            <input name="literature" id="literature" type="number" min="32" max="100" step="1">
+        <label for="medal" class="switch">Медаль</label>
+        <input
+          type="checkbox"
+          id="medal"
+          name="medal"
+          class="checkbox"
+        /><br /><br />
 
-            <label for="medal" class="switch">Медаль</label>
-            <input type="checkbox" id="medal" name="medal" class="checkbox"><br><br>
+        <label for="gto" class="switch">Значок ГТО</label>
+        <input
+          type="checkbox"
+          id="gto"
+          name="gto"
+          class="checkbox"
+        /><br /><br />
 
-            <label for="gto" class="switch">Значок ГТО</label>
-            <input type="checkbox" id="gto" name="gto" class="checkbox"><br><br>
+        <label for="volunteering" class="switch">Волонтерство</label>
+        <input
+          type="checkbox"
+          id="volunteering"
+          name="volunteering"
+          class="checkbox"
+        /><br /><br />
 
-            <label for="volunteering" class="switch">Волонтерство</label>
-            <input type="checkbox" id="volunteering" name="volunteering" class="checkbox"><br><br>
-
-            <button type="submit" style="margin-right: 0; margin-left: 0"><i class="fas fa-plus"></i>Найти подходящие направления обучения</button>
-        </form>
-        </div>
+        <button type="submit" style="margin-right: 0; margin-left: 0">
+          <i class="fas fa-plus"></i>Найти подходящие направления обучения
+        </button>
+      </form>
+    </div>
 
     <script src="ReturnMenu.js" defer></script>
-    <script src="applicantData.js" defer></script>
+    <script src="ApplicantData.js" defer></script>
   </body>
 </html>
+
