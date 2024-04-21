@@ -1,37 +1,48 @@
 <html lang="ru">
   <head>
-    <meta charset="utf-8"/>
+    <meta charset="utf-8" />
     <title>Помощник студента</title>
-    
-    
-    <link rel="stylesheet" href="index.css"/>
-    <link rel="stylesheet" href="fontawesome/css/all.min.css"/>
+
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="fontawesome/css/all.min.css" />
   </head>
   <body>
     <h1 class="title">Подбор мероприятий для студента</h1>
 
-      <button id = "ReturnMenu" class="dropbtn">Вернуться на главную страницу</button><br><br>
-        <h2 class = "title">Заполните форму, указав тип мероприятия, номер группы и свой адрес</h2>
-        <div class="form form-add-book">
+    <button id="ReturnMenu" class="dropbtn">
+      Вернуться на главную страницу</button
+    ><br /><br />
+    <h2 class="title">
+      Заполните форму, указав тип мероприятия, номер группы и свой адрес
+    </h2>
+    <div class="form form-add-book">
+      <form method="POST" id="form">
+        <label for="event">Выберите тип мероприятия:</label>
+        <select id="event">
+          <option value="leisure">Досуг</option>
+          <option value="skills">Развитие навыков</option>
+        </select>
 
-        <form method="POST" id="form">
-            <label for="event">Выберите тип мероприятия:</label>
-            <select  id="event">
-                <option value="leisure">Досуг</option>
-                <option value="skills">Развитие навыков</option>
-            </select>
+        <label for="group">Введите свой номер группы</label>
+        <input
+          name="group"
+          id="group"
+          type="text"
+          minlength="4"
+          maxlength="4"
+        />
 
-            <label for="group">Введите свой номер группы</label>
-            <input name="group" id="group" type="text" minlength="4" maxlength="4">
+        <label for="address">Введите свой адрес:</label>
+        <input name="address" id="address" type="text" />
 
-            <label for="address">Введите свой адрес:</label>
-            <input name="address" id="address" type="text">
-
-            <button type="submit" style="margin-right: 0; margin-left: 0"><i class="fas fa-plus"></i>Найти подходящие мероприятия</button>
-        </form>
-        </div>
+        <button type="submit" style="margin-right: 0; margin-left: 0">
+          <i class="fas fa-plus"></i>Найти подходящие мероприятия
+        </button>
+      </form>
+    </div>
 
     <script src="ReturnMenu.js" defer></script>
-    <script src="events.js" defer></script>
+    <script src="Events.js" defer></script>
   </body>
 </html>
+
