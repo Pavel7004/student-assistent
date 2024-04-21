@@ -5,6 +5,7 @@ import (
 	"database/sql/driver"
 	"encoding/csv"
 	"encoding/json"
+	"errors"
 	"fmt"
 	"io"
 	"log"
@@ -52,7 +53,7 @@ type Course struct {
 	Group         string
 	Acceptance    Acceptance `gorm:"embedded;embeddedPrefix:acceptance_"`
 	PriceContract uint64
-	Exams         Exams
+	Exams         Exams `gorm:"type:json"`
 	TotalScore    uint32
 	Competition   Competition `gorm:"embedded;embeddedPrefix:competition_"`
 }
@@ -102,9 +103,11 @@ func read_csv(f *os.File, db *gorm.DB) {
 func add_to_db(record []string, db *gorm.DB) error {
 	entry := new(Course)
 
-	tmp := strings.Split(record[0], " ")
-	entry.Code = tmp[0]
-	entry.Name = tmp[1]
+	if code, name, ok := strings.Cut(record[0], " "); ok {
+		entry.Code, entry.Name = code, name
+	} else {
+		return errors.New("Wrong course name")
+	}
 
 	entry.Group = record[1]
 
