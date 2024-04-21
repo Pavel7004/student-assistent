@@ -24,11 +24,10 @@ body{
     justify-content: space-between;
 }
 
-.button {
-    color: blue;
-}
+
 
 button {
+    
     /* Удаление обводки */
     border: none;
     /* Закругление кнопки */
@@ -43,6 +42,20 @@ button {
     font-weight: 600;
     /* Плавное изменение размера кнопки*/
     transition: .2s;
+}
+
+.button {
+    position: fixed;
+    left: 48%;
+    margin: auto;
+    color: blue;
+}
+
+.dropbtn {
+    position: absolute;
+    left: 44%;
+    margin: auto;
+    color: blue;
 }
 
 /* При наведении меняется цвет*/
@@ -92,7 +105,7 @@ form {
     flex-direction: column;
 }
 
-form input {
+form input select{
     margin-bottom: 0.7em;
     padding: 8px;
     border: 2px solid #ccc;
