@@ -193,7 +193,7 @@ def form_query_courses(data, jobs, total):
     '''
     for name, result in data.items():
         q += f'''
-        (exam->>'{name}' = 'Математика') and
+        (exam->>'Name' = '{name}') and
         ((exam->>'MinScore')::int <= {result}) or'''
 
     # Replace last "or" with "and"
