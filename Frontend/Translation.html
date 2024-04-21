@@ -1,0 +1,36 @@
+<html lang="ru">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Помощник студента</title>
+    
+    
+    <link rel="stylesheet" href="index.css"/>
+    <link rel="stylesheet" href="fontawesome/css/all.min.css"/>
+  </head>
+  <body>
+    <h1 class="title">Подбор программы обучения при переводе</h1>
+
+      <button id = "ReturnMenu" class="dropbtn">Вернуться на главную страницу</button><br><br>
+        <h2 class = "title">Заполните форму, выбрав текущее направление обучения, свой средний балл и новую желаемую сферу деятельности</h2>
+        <div class="form form-add-book">
+
+        <form method="POST" id="form">
+            <label for="courses">Выберите текущее направление обучения:</label>
+            <select  id="courses">
+            </select>
+
+            <label for="score">Введите свой средний балл</label>
+            <input name="score" id="score" type="number" min="2" max="5">
+
+            <label for="fieldactivity">Выберите новую желаемую сферу деятельности:</label>
+            <select  id="fieldactivity">
+            </select>
+
+            <button type="submit" style="margin-right: 0; margin-left: 0"><i class="fas fa-plus"></i>Найти подходящие направления обучения</button>
+        </form>
+        </div>
+
+    <script src="ReturnMenu.js" defer></script>
+    <script src="Translation.js" defer></script>
+  </body>
+</html>
