@@ -60,6 +60,13 @@ class DBAdapter:
 db = DBAdapter()
 
 
+@app.route('/planday', methods=['POST'])
+def planday():
+    data = [{"address": "ул. Авиационная д. 9", "time": "28.04.24 23:30"}]
+
+    return json.dumps(data, ensure_ascii=False)
+
+
 @app.route('/events', methods=['POST'])
 def events():
     data = [{
