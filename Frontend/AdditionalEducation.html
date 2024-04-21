@@ -1,0 +1,41 @@
+<html lang="ru">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Помощник студента</title>
+    
+    
+    <link rel="stylesheet" href="index.css"/>
+    <link rel="stylesheet" href="fontawesome/css/all.min.css"/>
+  </head>
+  <body>
+    <h1 class="title">Жилье для студента:</h1>
+
+      <button id = "ReturnMenu" class="dropbtn">Вернуться на главную страницу</button><br><br>
+        <h2 class = "title">Заполните форму, указав сферу и цель обучения а также номер группы</h2>
+        <div class="form form-add-book">
+
+        <form method="POST" id="form">
+            <label for="fieldactivity">Выберите желаемую сферу деятельности:</label>
+            <select  id="fieldactivity">
+            </select>
+            
+            <label for="event">Выберите тип мероприятия:</label>
+            <select  id="event">
+                <option value="leisure">Узнать новое</option>
+                <option value="skills">Углубиться</option>
+            </select>
+
+            <label for="address">Введите адрес ВУЗА:</label>
+            <input name="address" id="address" type="text">
+
+            <label for="group">Введите номер своей группы:</label>
+            <input name="group" id="group" type="number">
+
+            <button type="submit" style="margin-right: 0; margin-left: 0"><i class="fas fa-plus"></i>Подобрать жилье</button>
+        </form>
+        </div>
+
+    <script src="ReturnMenu.js" defer></script>
+    <script src="additionalEducation.js" defer></script>
+  </body>
+</html>
