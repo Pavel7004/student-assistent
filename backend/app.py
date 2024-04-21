@@ -87,12 +87,7 @@ db = DBAdapter()
 @app.route('/jobs',methods=['GET'])
 def jobs():
     data = ["гуманитарная сфера","информационно-измерительные и биотехнические системы","компьютерный технологии и информатика","радиотехника и телекоммуникация","электроника","электротехника и автоматика" ]
-    return json.dumps(data)
-
-@app.route('/',methods=['GET'])
-def home():
-    return render_template('test.html') 
-    
+    return json.dumps(data)  
 
 
 @app.route('/courses', methods=['POST'])
