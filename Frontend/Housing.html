@@ -1,0 +1,31 @@
+<html lang="ru">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Помощник студента</title>
+    
+    
+    <link rel="stylesheet" href="index.css"/>
+    <link rel="stylesheet" href="fontawesome/css/all.min.css"/>
+  </head>
+  <body>
+    <h1 class="title">Жилье для студента:</h1>
+
+      <button id = "ReturnMenu" class="dropbtn">Вернуться на главную страницу</button><br><br>
+        <h2 class = "title">Заполните форму, указав адрес ВУЗА и бюджет на жилье</h2>
+        <div class="form form-add-book">
+
+        <form method="POST" id="form">
+            <label for="address">Введите адрес ВУЗА:</label>
+            <input name="address" id="address" type="text">
+
+            <label for="money">Введите жилищный бюджет:</label>
+            <input name="money" id="money" type="number" min="0">
+
+            <button type="submit" style="margin-right: 0; margin-left: 0"><i class="fas fa-plus"></i>Подобрать жилье</button>
+        </form>
+        </div>
+
+    <script src="ReturnMenu.js" defer></script>
+    <script src="housing.js" defer></script>
+  </body>
+</html>
