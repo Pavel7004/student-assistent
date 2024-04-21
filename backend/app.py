@@ -38,16 +38,7 @@ class DBAdapter:
     def __init__(self):
         self.conn = psycopg2.connect(**db_config)
 
-    def query_json(self, sql_query):
-        cursor = self.conn.cursor()
-
-        cursor.execute(sql_query)
-        answer = cursor.fetchall()
-        cursor.close()
-
-        return answer
-
-    def query_array(self, sql_query):
+    def query(self, sql_query):
         cursor = self.conn.cursor()
 
         cursor.execute(sql_query)
@@ -122,7 +113,7 @@ def jobs():
 
 @app.route('/courses/all', methods=['GET'])
 def all_courses():
-    return db.query_array("SELECT name FROM courses GROUP BY name;")
+    return db.query("SELECT name FROM courses GROUP BY name;")
 
 
 @app.route('/courses/translation', methods=['POST'])
@@ -143,7 +134,7 @@ def courses():
     jobs = ", ".join(map(lambda x: "'" + x + "'", jobs))
     total = calculate_total(data, jobs)
 
-    res = db.query_json(form_query_courses(data, jobs, total))
+    res = db.query(form_query_courses(data, jobs, total))
     print("Query result:" + str(res))
     return convert_to_json(res)
 
@@ -161,7 +152,7 @@ def calculate_total(data, jobs):
         data.pop("isVolunteering")
     total += min(total, 10)
 
-    required_subjects = db.query_array(f'''
+    required_subjects = db.query(f'''
     SELECT DISTINCT exam->>'Name'
     FROM courses, json_array_elements(exams) AS exam
     WHERE courses.code in ({jobs})
