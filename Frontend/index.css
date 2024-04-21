@@ -1,158 +1,169 @@
-body{
-    /* + Затемнение */
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-                url(background.jpg) no-repeat;
-    background-size: cover;
-    margin: 0;
+body {
+  /* + Затемнение */
 }
 
 .dropdown-content {
-    display: none;
+  display: none;
 }
 
-.title{
-    padding-top: 0.5em;
-    text-align: center;
-    font-weight: 900;
-    color : red;
+.title {
+  padding-top: 0.5em;
+  text-align: center;
+  font-weight: 900;
+  color: red;
 }
 
-.button-block .dropdown-content{
-    width: 50%;
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
+.button-block .dropdown-content {
+  width: 50%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
 }
-
-
 
 button {
-    
-    /* Удаление обводки */
-    border: none;
-    /* Закругление кнопки */
-    border-radius: 3px;
+  /* Удаление обводки */
+  border: none;
+  /* Закругление кнопки */
+  border-radius: 3px;
 
-    /* .5 сокращение от 0.5; Первое значение по y, второе по x */
-    padding: .5em 1.5em;
-    margin: 0 5px;
+  /* .5 сокращение от 0.5; Первое значение по y, второе по x */
+  padding: 0.5em 1.5em;
+  margin: 0 5px;
 
-
-    /* Жирный шрифт */
-    font-weight: 600;
-    /* Плавное изменение размера кнопки*/
-    transition: .2s;
+  /* Жирный шрифт */
+  font-weight: 600;
+  /* Плавное изменение размера кнопки*/
+  transition: 0.2s;
 }
 
 .button {
-    position: fixed;
-    left: 48%;
-    margin: auto;
-    color: blue;
+  position: fixed;
+  left: 48%;
+  margin: auto;
+  color: blue;
 }
 
 .dropbtn {
-    position: absolute;
-    left: 44%;
-    margin: auto;
-    color: blue;
+  position: relative;
+  color: blue;
 }
 
 /* При наведении меняется цвет*/
 button:not(.delete-btn):hover {
-    background: #d3dcff;
+  background: #d3dcff;
 }
 
 /* При наведении меняется цвет
 красный у кнопки удаления
 */
 .delete-btn:hover {
-    background: #ffd3d3;
+  background: #ffd3d3;
 }
 
 /* При нажатии уменьшается размер */
 button:active {
-    transform: scale(0.92);
+  transform: scale(0.92);
 }
 
-.form, .item {
-    margin: 0 auto;
-    padding: 1em;
-    width: 50%;
-    color: white;
-    font-weight: 900;
-    font-size: 20px;
+.form,
+.item {
+  margin: 0 auto;
+  padding: 1em;
+  width: 50%;
+  color: white;
+  font-weight: 900;
+  font-size: 20px;
 
-    box-shadow: 0px 0px 16px 1px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 0px 16px 1px rgba(0, 0, 0, 0.3);
 }
 
 .form {
-    background: #2e2e3a;
+  background: #2e2e3a;
 }
 
 .form button {
-    margin-top: 1em;
+  margin-top: 1em;
 }
 
 .form label {
-    margin-bottom: 0.3em;
+  margin-bottom: 0.3em;
 }
 
 form {
-    padding: 10px 20px;
-    margin-bottom: 0;
-    display: flex;
-    flex-direction: column;
+  padding: 10px 20px;
+  margin-bottom: 0;
+  display: flex;
+  flex-direction: column;
 }
 
-form input select{
-    margin-bottom: 0.7em;
-    padding: 8px;
-    border: 2px solid #ccc;
-    border-radius: 5px;
-    font-size: 14px;
-    color: #555;
-    outline: none;
-    transition: .2s;
+form input select {
+  margin-bottom: 0.7em;
+  padding: 8px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  color: #555;
+  outline: none;
+  transition: 0.2s;
 }
 
 form input:focus {
-    border-color: #007bff;
-    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25)
+  border-color: #007bff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
 
 .item {
-    background: green;
-    text-align: center;
-    margin-bottom: 30px;
-    margin-top: 20px;
-}
-    
-#dataContainer p a{
-    margin: 10px;
+  background: green;
+  text-align: center;
+  margin-bottom: 30px;
+  margin-top: 20px;
 }
 
-#dropDown p a{
-    margin: 10px;
+#dataContainer p a {
+  margin: 10px;
 }
 
+#dropDown p a {
+  margin: 10px;
+}
 
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url(background.jpg) no-repeat;
+  background-size: cover;
+  margin: 0;
+}
 
 .container {
-    
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 50px; 
-    width: 100%;
-    background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-link{
-    padding: 100px;
-    background-color: white;
-    color: black;
-    font-size: 50px;
-    text-decoration: none;
+.container a {
+  text-decoration: none;
+  color: black;
+  margin-bottom: 10px;
+  padding: 5px;
+  transition: background-color 0.3s ease-in-out;
+  width: 100%;
+  display: block;
+  text-align: center;
 }
+
+.container a:hover {
+  background-color: #88c0d0;
+}
+
